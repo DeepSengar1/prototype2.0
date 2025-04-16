@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Heatmap from "../../components/heatmap/heatmap";
 import Ai from "../../components/AI/Ai";
 import Feedbacks from "../../components/feedbacks/feedbacks";
+import { Command, MessageCircle, MessageSquare } from "lucide-react";
 
 const Home = () => {
   const [formData, setFormData] = useState({});
@@ -18,16 +19,19 @@ const Home = () => {
   return (
     <>
       <div className="w-full flex flex-col items-center gap-10">
-        <Ai />
+        <div className="flex gap-10 w-full justify-between py-1 px-2">
+            <Ai />
+            <button className="bg-blue-500 w-10 rounded-4xl flex justify-center items-center"><MessageSquare/></button>
+        </div>
         <div className="h-96 w-[600px] flex items-center flex-col">
-            Local Heatmap
+          Local Heatmap
           <Heatmap />
         </div>
         <form
           onSubmit={handleSubmit}
           className="flex flex-col items-center w-[400px] gap-2 p-2"
         >
-            UNI- Calculator
+          UNI- Calculator
           <label className="flex justify-between w-full">
             Average Temprature
             <input
@@ -48,7 +52,6 @@ const Home = () => {
               onChange={handleChange}
             />
           </label>
-
           <label className="flex justify-between w-full">
             Pollution Level
             <input
@@ -59,11 +62,17 @@ const Home = () => {
               onChange={handleChange}
             />
           </label>
-          <button type="submit" className="w-fit bg-blue-800 px-4 py-0.5 rounded-2xl mt-2">
+          <button
+            type="submit"
+            className="w-fit bg-blue-800 px-4 py-0.5 rounded-2xl mt-2"
+          >
             Submit
           </button>
         </form>
-        <Feedbacks/>
+        
+           
+            <Feedbacks />
+        
       </div>
     </>
   );
