@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { toast } from "react-toastify";
 import { BotMessageSquare, X, ArrowUp, Loader, Spline } from "lucide-react";
 import "react-toastify/dist/ReactToastify.css";
-import { motion } from "motion/react";
+import {motion}  from "motion/react";
 
 const Ai = () => {
   const [question, setQuestion] = useState("");
